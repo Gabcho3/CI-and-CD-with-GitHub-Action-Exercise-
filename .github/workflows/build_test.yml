@@ -19,5 +19,15 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm install
+
+    - name: Install Mocha globally
+      run: npm install -g mocha
+
+    - name: Set execute permissions for Mocha
+      run: chmod +x ./node_modules/.bin/mocha
+
+    - name: List directory contents
+      run: ls -al ./node_modules/.bin/
+
     - name: Run Integration Tests
       run: npm test
